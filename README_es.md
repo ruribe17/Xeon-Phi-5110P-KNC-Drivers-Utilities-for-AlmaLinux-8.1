@@ -1,1 +1,9 @@
+**Reviviendo el Xeon Phi 5110P para IA y HPC en Distribuciones Modernas de Linux**  
 
+En el sector de educación básica regular en Lima, Perú, existe una creciente necesidad de soluciones accesibles de inteligencia artificial (IA) para fortalecer iniciativas educativas, como el aprendizaje personalizado, la evaluación automatizada y los sistemas de tutoría inteligente. Sin embargo, la implementación de modelos de IA de gran escala, como los de 7B y 14B parámetros, requiere recursos computacionales significativos, muchas veces fuera del alcance financiero de instituciones educativas con presupuestos limitados.  
+
+El **Intel Xeon Phi 5110P** surge como una posible alternativa de bajo costo para cargas de trabajo de IA, gracias a su capacidad de computación en paralelo. No obstante, un obstáculo clave para su uso en sistemas operativos modernos como **AlmaLinux 8.1** es la falta de controladores y utilidades disponibles. Desde que **Intel descontinuó el soporte para la arquitectura Xeon Phi**, las distribuciones de Linux más recientes ya no incluyen los componentes de software necesarios para aprovechar al máximo estos coprocesadores.  
+
+Esta situación deja a educadores y desarrolladores de la región sin una opción viable para reutilizar el hardware Xeon Phi en tareas de inferencia y entrenamiento de IA. Para superar esta barrera, es fundamental desarrollar o adaptar controladores y herramientas que permitan el uso completo del **Xeon Phi 5110P en AlmaLinux 8.1**, asegurando su compatibilidad con marcos de IA modernos y manteniendo la estabilidad y el rendimiento del sistema.  
+
+Resolver este problema permitiría que instituciones con recursos limitados aprovechen hardware accesible y reutilizable para la implementación de herramientas educativas basadas en IA, fomentando la **inclusión tecnológica y la innovación** en el sector educativo de Lima.
