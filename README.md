@@ -18,7 +18,7 @@ Keijser (2024) provides a comprehensive guide on implementing the Manycore Platf
 
 After a successful build, install the newly compiled kernel module:  
 
-```rpm -ivh mpss-modules-4.18.0-553.40.1.el8_10.x86_64-3.8.6-7.x86_64.rpm```
+```rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-AlmaLinux-8.1/releases/download/v0.1.0-alpha/mpss-modules-4.18.0-553.40.1.el8_10.x86_64-3.8.6-8.x86_64.rpm```
 
 This registers the `mic.ko` module with the system.  
 
