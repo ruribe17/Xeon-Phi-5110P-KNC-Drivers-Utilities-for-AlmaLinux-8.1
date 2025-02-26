@@ -119,3 +119,5 @@ By following these steps, you have successfully compiled, installed, and loaded 
 Keijser, J. J. (2023). MPSS for Xeon Phi 5110P KNC drivers and utilities (v3.8.6). GitHub. https://github.com/jjkeijser/mpss
 
 Keijser, J. J. (2022). Xeon Phi MPSS on CentOS 8. Retrieved from https://jjkeijser.github.io/mpss/xeon-phi-mpss-centos8.html
+
+xdsopl. (2015). mpss-modules [GitHub repository]. GitHub. Retrieved February 26, 2025, from https://github.com/xdsopl/mpss-modules
