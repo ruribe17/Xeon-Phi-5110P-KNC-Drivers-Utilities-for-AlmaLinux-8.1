@@ -40,7 +40,7 @@ This ensures that all necessary folders exist before proceeding with the RPM bui
 
 Now, install the MPSS source RPM package:  
 
-rpm -ivh ./instaladores/mpss-modules-3.8.6-7.src.rpm
+rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-AlmaLinux-8.1/releases/download/v0.1.0-alpha/mpss-modules-3.8.6-8.src.rpm
 
 This extracts the source files into the `rpmbuild` directory, which will be used for compiling the module.  
 
