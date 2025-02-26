@@ -11,8 +11,40 @@ This research explores the feasibility of recompiling Xeon Phi 5110P drivers on 
 **Literature Review**
 
 Keijser (2024) provides a comprehensive guide on implementing the Manycore Platform Software Stack (MPSS) for the Xeon Phi on CentOS 8, addressing compatibility and configuration challenges in modern operating systems. This study builds upon Keijser’s work by adapting it for AlmaLinux 8.1, leveraging its binary compatibility with RHEL and extended support. The methodology outlined in Keijser (2024) has served as a critical reference for adapting MPSS software in AlmaLinux, ensuring a functional solution for educational environments in the U.S.
+**Installing the mic.ko Module on AlmaLinux 8.10** 
 
-**Building and Installing the mic.ko Module on AlmaLinux 8.10**  
+   **Step 1: Installing the Compiled Module**  
+
+After a successful build, install the newly compiled kernel module:  
+
+```rpm -ivh mpss-modules-4.18.0-553.40.1.el8_10.x86_64-3.8.6-7.x86_64.rpm```
+
+This registers the `mic.ko` module with the system.  
+
+   **Step 2: Creating a Symbolic Link for mic.ko**  
+
+Navigate to the kernel module directory and create a symbolic link to the `mic.ko` module:  
+
+```
+cd /lib/modules/4.18.0-553.40.1.el8_10.x86_64/weak-updates/
+ln -s /lib/modules/4.18.0-553.40.1.el8_10.x86_64/extra/mic.ko ./mic.ko
+```
+
+This ensures the system recognizes the module in the correct location.  
+
+   **Step 3: Loading and Verifying the Module**  
+
+Finally, load the `mic.ko` module into the kernel using:  
+
+```modprobe mic```
+
+To confirm that the module is successfully loaded, check with:  
+
+```lsmod | grep mic```
+
+If the module is properly installed and loaded, you should see `mic` listed in the output.  
+
+**Building the mic.ko Module on AlmaLinux 8.10**  
 
 The Intel Xeon Phi 5110P requires the `mic.ko` kernel module to function properly, but since official support for the Manycore Platform Software Stack (MPSS) has been discontinued, manually building and installing this module is necessary. This guide walks through the process of compiling and installing the `mic.ko` module on AlmaLinux 8.10.  
 
@@ -74,37 +106,6 @@ Once the necessary modifications are in place, build the RPM package with:
 ```rpmbuild -bb mpss-modules-3.8.6-rhel85.spec```
 
 This command compiles the kernel module and packages it into an installable RPM.  
-
-   **Step 7: Installing the Compiled Module**  
-
-After a successful build, install the newly compiled kernel module:  
-
-```rpm -ivh mpss-modules-4.18.0-553.40.1.el8_10.x86_64-3.8.6-7.x86_64.rpm```
-
-This registers the `mic.ko` module with the system.  
-
-   **Step 8: Creating a Symbolic Link for mic.ko**  
-
-Navigate to the kernel module directory and create a symbolic link to the `mic.ko` module:  
-
-```
-cd /lib/modules/4.18.0-553.40.1.el8_10.x86_64/weak-updates/
-ln -s /lib/modules/4.18.0-553.40.1.el8_10.x86_64/extra/mic.ko ./mic.ko
-```
-
-This ensures the system recognizes the module in the correct location.  
-
-   **Step 9: Loading and Verifying the Module**  
-
-Finally, load the `mic.ko` module into the kernel using:  
-
-```modprobe mic```
-
-To confirm that the module is successfully loaded, check with:  
-
-```lsmod | grep mic```
-
-If the module is properly installed and loaded, you should see `mic` listed in the output.  
 
    **Conclusion**  
 
