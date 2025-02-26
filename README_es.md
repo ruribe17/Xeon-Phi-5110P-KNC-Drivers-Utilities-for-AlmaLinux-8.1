@@ -8,4 +8,12 @@ Esta limitación impide que docentes y desarrolladores reutilicen el hardware Xe
 
 Esta investigación explora la viabilidad de recompilar controladores para el Xeon Phi 5110P en AlmaLinux 8.1 con el fin de habilitar cargas de trabajo de IA en el sector educativo de Lima. AlmaLinux 8.1 ha sido seleccionado por su soporte a largo plazo hasta 2029, su compatibilidad binaria con RHEL y su estabilidad, lo que lo convierte en una solución adecuada para suplir la falta de controladores oficiales. Garantizar la compatibilidad con marcos de IA modernos proporcionaría recursos computacionales escalables y de bajo costo, permitiendo a las instituciones educativas aprovechar al máximo sus inversiones en hardware existente para potenciar la educación con tecnología de vanguardia.
 
+**Revisión de Literatura**
+
+El trabajo de Keijser (2024) proporciona una guía detallada sobre la implementación del Manycore Platform Software Stack (MPSS) para el Xeon Phi en CentOS 8, abordando los desafíos de compatibilidad y configuración en sistemas operativos modernos. Esta investigación se basa en dicho estudio y lo aplica a AlmaLinux 8.1, aprovechando su compatibilidad binaria con RHEL y su soporte a largo plazo. La metodología propuesta en Keijser (2024) ha servido como referencia clave para la adaptación del software MPSS en AlmaLinux, permitiendo el desarrollo de una solución funcional para entornos educativos en Lima.
+
+**Referencias**
+
+Keijser, J. J. (2024). Xeon Phi MPSS en CentOS 8. Recuperado de https://jjkeijser.github.io/mpss/xeon-phi-mpss-centos8.html
+
 
