@@ -48,9 +48,11 @@ This extracts the source files into the `rpmbuild` directory, which will be used
 
 Navigate to the `SPECS` directory and open the SPEC file for editing:  
 
+---
 cd ~/rpmbuild/SPECS
 vi mpss-modules-3.8.6-rhel85.spec
 
+---
 In this step, verify that the kernel version matches the one currently running on your system. You can check your kernel version with:  
 
 uname -r
