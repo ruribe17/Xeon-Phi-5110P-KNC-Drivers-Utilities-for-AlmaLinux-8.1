@@ -34,10 +34,7 @@ This installs essential compilers, kernel development files, and utilities requi
 
 Next, create the necessary directory structure for building RPM packages:  
 
----
-mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
-
----
+```mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}```
 
 This ensures that all necessary folders exist before proceeding with the RPM build process.  
 
