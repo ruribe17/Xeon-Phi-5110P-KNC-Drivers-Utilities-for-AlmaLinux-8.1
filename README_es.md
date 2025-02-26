@@ -1,5 +1,5 @@
 ### Reviviendo Xeon Phi 5110P para IA y HPC en distribuciones modernas de Linux
-
+![image](https://github.com/user-attachments/assets/9b96f1f2-4ff7-40d8-8ef9-6211b9510597)
 En el sector de educación básica de Lima, Perú, hay una creciente demanda de soluciones de IA rentables para apoyar el aprendizaje personalizado, evaluaciones automatizadas y sistemas de tutoría inteligente. Sin embargo, desplegar modelos de IA, como modelos con 7B y 14B parámetros, requiere recursos computacionales sustanciales, a menudo fuera del alcance financiero de las instituciones con presupuestos limitados.
 
 El Intel Xeon Phi 5110P ofrece una alternativa potencial de bajo costo para cargas de trabajo de IA debido a sus altas capacidades de computación paralela. Sin embargo, su adopción en sistemas operativos modernos, como AlmaLinux 8.1, se ve obstaculizada por la falta de controladores y utilidades fácilmente disponibles. Dado que Intel ha descontinuado el soporte para la arquitectura Xeon Phi, las distribuciones de Linux más recientes ya no incluyen los componentes de software necesarios para utilizar plenamente estos coprocesadores.
