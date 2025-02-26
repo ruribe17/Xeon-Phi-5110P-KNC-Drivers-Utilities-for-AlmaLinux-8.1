@@ -11,6 +11,7 @@ This research explores the feasibility of recompiling Xeon Phi 5110P drivers on 
 **Literature Review**
 
 Keijser (2024) provides a comprehensive guide on implementing the Manycore Platform Software Stack (MPSS) for the Xeon Phi on CentOS 8, addressing compatibility and configuration challenges in modern operating systems. This study builds upon Keijser’s work by adapting it for AlmaLinux 8.1, leveraging its binary compatibility with RHEL and extended support. The methodology outlined in Keijser (2024) has served as a critical reference for adapting MPSS software in AlmaLinux, ensuring a functional solution for educational environments in the U.S.
+
 **Installing the mic.ko Module on AlmaLinux 8.10** 
 
    **Step 1: Installing the Compiled Module**  
