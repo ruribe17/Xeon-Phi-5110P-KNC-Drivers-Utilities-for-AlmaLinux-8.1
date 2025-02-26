@@ -8,3 +8,10 @@ This challenge limits educators and developers from repurposing existing Xeon Ph
 
 This research explores the feasibility of recompiling Xeon Phi 5110P drivers on AlmaLinux 8.1 to support AI workloads in Lima’s educational sector. AlmaLinux 8.1 is chosen for its long-term support until 2029, binary compatibility with RHEL, and stability, making it a practical solution for overcoming the absence of official drivers. Ensuring compatibility with modern AI frameworks would provide low-cost, scalable computing resources, allowing educational institutions to maximize their existing hardware investments for AI-powered learning solutions.
 
+**Literature Review**
+
+Keijser (2024) provides a comprehensive guide on implementing the Manycore Platform Software Stack (MPSS) for the Xeon Phi on CentOS 8, addressing compatibility and configuration challenges in modern operating systems. This study builds upon Keijser’s work by adapting it for AlmaLinux 8.1, leveraging its binary compatibility with RHEL and extended support. The methodology outlined in Keijser (2024) has served as a critical reference for adapting MPSS software in AlmaLinux, ensuring a functional solution for educational environments in the U.S.
+
+**References**
+
+Keijser, J. J. (2024). Xeon Phi MPSS on CentOS 8. Retrieved from https://jjkeijser.github.io/mpss/xeon-phi-mpss-centos8.html
