@@ -63,7 +63,7 @@ For example, if the output is `4.18.0-553.40.1.el8_10.x86_64`, update the SPEC f
 
 Copy the appropriate kernel patch file to the `SOURCES` directory:  
 
-cp /root/rpmbuild/SOURCES/mpss-modules-4.18.0-553.37.1.el8_10.x86_64.patch /root/rpmbuild/SOURCES/mpss-modules-4.18.0-553.40.1.el8_10.x86_64.patch
+```cp /root/rpmbuild/SOURCES/mpss-modules-4.18.0-553.37.1.el8_10.x86_64.patch /root/rpmbuild/SOURCES/mpss-modules-4.18.0-553.40.1.el8_10.x86_64.patch```
 
 This ensures that the patch aligns with the kernel version currently installed.  
 
@@ -71,7 +71,7 @@ This ensures that the patch aligns with the kernel version currently installed.
 
 Once the necessary modifications are in place, build the RPM package with:  
 
-rpmbuild -bb mpss-modules-3.8.6-rhel85.spec
+```rpmbuild -bb mpss-modules-3.8.6-rhel85.spec```
 
 This command compiles the kernel module and packages it into an installable RPM.  
 
@@ -79,7 +79,7 @@ This command compiles the kernel module and packages it into an installable RPM.
 
 After a successful build, install the newly compiled kernel module:  
 
-rpm -ivh mpss-modules-4.18.0-553.40.1.el8_10.x86_64-3.8.6-7.x86_64.rpm
+```rpm -ivh mpss-modules-4.18.0-553.40.1.el8_10.x86_64-3.8.6-7.x86_64.rpm```
 
 This registers the `mic.ko` module with the system.  
 
@@ -87,8 +87,10 @@ This registers the `mic.ko` module with the system.
 
 Navigate to the kernel module directory and create a symbolic link to the `mic.ko` module:  
 
+```
 cd /lib/modules/4.18.0-553.40.1.el8_10.x86_64/weak-updates/
 ln -s /lib/modules/4.18.0-553.40.1.el8_10.x86_64/extra/mic.ko ./mic.ko
+```
 
 This ensures the system recognizes the module in the correct location.  
 
@@ -96,11 +98,11 @@ This ensures the system recognizes the module in the correct location.
 
 Finally, load the `mic.ko` module into the kernel using:  
 
-modprobe mic
+```modprobe mic```
 
 To confirm that the module is successfully loaded, check with:  
 
-lsmod | grep mic
+```lsmod | grep mic```
 
 If the module is properly installed and loaded, you should see `mic` listed in the output.  
 
