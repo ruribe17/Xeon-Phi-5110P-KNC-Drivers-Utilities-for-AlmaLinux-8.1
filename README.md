@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/86a4ec63-80c9-4bd2-a853-65fa5d1c69e6)
 In Lima, Peru's basic education sector, there is a growing demand for cost-effective AI solutions to support personalized learning, automated assessments, and intelligent tutoring systems. However, deploying AI models, such as 7B and 14B parameter models, requires substantial computational resources, often beyond the financial reach of institutions with limited budgets.
 
-The Intel Xeon Phi 5110P offers a potential low-cost alternative for AI workloads due to its high parallel computing capabilities. However, its adoption on modern operating systems, such as AlmaLinux 8.1, is hindered by the lack of readily available drivers and utilities. Since Intel has discontinued support for the Xeon Phi architecture, newer Linux distributions no longer include the necessary software components to fully utilize these coprocessors.
+The Intel Xeon Phi 5110P offers a potential low-cost alternative for AI workloads due to its high parallel computing capabilities. However, its adoption on modern operating systems, such as AlmaLinux 8.10 (AlmaLinux,2025), is hindered by the lack of readily available drivers and utilities. Since Intel has discontinued support for the Xeon Phi architecture, newer Linux distributions no longer include the necessary software components to fully utilize these coprocessors.
 
 This challenge limits educators and developers from repurposing existing Xeon Phi hardware for AI inference and training. Addressing this issue requires developing or adapting driver support and utilities to ensure full compatibility with AlmaLinux 8.1. This effort would enable low-budget institutions to leverage older hardware for AI-based educational tools, fostering technological inclusion and innovation in Lima’s education sector.
 
@@ -115,6 +115,8 @@ This command compiles the kernel module and packages it into an installable RPM.
 By following these steps, you have successfully compiled, installed, and loaded the `mic.ko` kernel module on AlmaLinux 8.10. This process enables the continued use of Xeon Phi 5110P hardware despite the discontinuation of official support. With this module in place, you can now explore AI and HPC applications using this hardware.
 
 **References**
+
+AlmaLinux. (2025). Get AlmaLinux. AlmaLinux Foundation. Recuperado el 26 de febrero de 2025, de https://almalinux.org/get-almalinux/
 
 Keijser, J. J. (2023). MPSS for Xeon Phi 5110P KNC drivers and utilities (v3.8.6). GitHub. https://github.com/jjkeijser/mpss
 
