@@ -21,11 +21,9 @@ The Intel Xeon Phi 5110P requires the `mic.ko` kernel module to function properl
 Before beginning, ensure that your system has the necessary development tools installed. Start by installing the required packages:  
 
 ```
-
 dnf groupinstall -y "Development Tools"
 
 dnf install -y rpm-build kernel-devel-$(uname -r) kernel-headers-$(uname -r) elfutils-libelf-devel gcc make dnf-utils
-
 ```
 
 This installs essential compilers, kernel development files, and utilities required to build kernel modules.  
