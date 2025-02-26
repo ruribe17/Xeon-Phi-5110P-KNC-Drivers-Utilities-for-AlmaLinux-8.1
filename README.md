@@ -1,4 +1,4 @@
-###**Reviving Xeon Phi 5110P for AI & HPC on Modern Linux Distributions**
+**Reviving Xeon Phi 5110P for AI & HPC on Modern Linux Distributions**
 
 In the regular basic education sector in Lima, Peru, there is a growing need for cost-effective AI solutions to support educational initiatives, such as personalized learning, automated assessment, and intelligent tutoring systems. However, deploying AI models like 7B and 14B parameter models requires significant computational resources, which are often beyond the financial reach of educational institutions with limited budgets.  
 
