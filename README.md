@@ -56,7 +56,7 @@ rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif0-3.8.6-1.glibc2.12.x86_64.rpm
 rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-dev-3.8.6-1.glibc2.12.x86_64.rpm
 rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-doc-3.8.6-1.glibc2.12.x86_64.rpm
 rpm -ivh mpss-daemon-3.8.6-4.el8.x86_64.rpm
-rpm -ivh ./updated_drivers/mpss-daemon-3.8.6-4.el8.x86_64.rpm
+rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-AlmaLinux-8.1/blob/main/mpss-daemon-3.8.6-4.el8.x86_64.rpm
 ```
 
 **Building the mic.ko Module on AlmaLinux 8.10**  
