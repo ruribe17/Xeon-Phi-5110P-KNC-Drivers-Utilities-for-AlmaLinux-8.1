@@ -10,7 +10,7 @@ Esta investigación explora la viabilidad de recompilar los controladores del Xe
 
 **Revisión de la literatura**
 
-Keijser (2024) proporciona una guía completa sobre la implementación de la Manycore Platform Software Stack (MPSS) para Xeon Phi en CentOS 8, abordando los desafíos de compatibilidad y configuración en sistemas operativos modernos. Este estudio se basa en el trabajo de Keijser adaptado para AlmaLinux 8.1, aprovechando su compatibilidad binaria con RHEL y soporte extendido. La metodología descrita por Keijser (2024) ha sido una referencia crítica para adaptar el software MPSS en AlmaLinux, garantizando una solución funcional para entornos educativos en los EE. UU.
+Keijser (2024) proporciona una guía completa sobre la implementación de la Manycore Platform Software Stack (MPSS) para Xeon Phi en CentOS 8, abordando los desafíos de compatibilidad y configuración en sistemas operativos modernos. Este estudio se basa en el trabajo de Keijser adaptado para AlmaLinux 8.1, aprovechando su compatibilidad binaria con RHEL y soporte extendido. La metodología descrita por Keijser (2024) ha sido una referencia crítica para adaptar el software MPSS en AlmaLinux, garantizando una solución funcional para entornos educativos en Perú.
 
 **Instalación del módulo mic.ko en AlmaLinux 8.10**
 
