@@ -45,7 +45,19 @@ To confirm that the module is successfully loaded, check with:
 
 ```lsmod | grep mic```
 
-If the module is properly installed and loaded, you should see `mic` listed in the output.  
+If the module is properly installed and loaded, you should see `mic` listed in the output.
+
+   **Step 4: Installing Required Libraries and Daemon**
+
+Install the required dependencies for running the MPSS daemon:
+
+```
+rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif0-3.8.6-1.glibc2.12.x86_64.rpm
+rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-dev-3.8.6-1.glibc2.12.x86_64.rpm
+rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-doc-3.8.6-1.glibc2.12.x86_64.rpm
+rpm -ivh mpss-daemon-3.8.6-4.el8.x86_64.rpm
+rpm -ivh ./updated_drivers/mpss-daemon-3.8.6-4.el8.x86_64.rpm
+```
 
 **Building the mic.ko Module on AlmaLinux 8.10**  
 
