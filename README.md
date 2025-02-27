@@ -66,8 +66,7 @@ rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-Al
    ```
 2. Install `libmicmgmt` development and documentation packages:
    ```
-   rpm -ivh glibc2.12pkg-libmicmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm \
-           glibc2.12pkg-libmicmgmt-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   rpm -ivh glibc2.12pkg-libmicmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm glibc2.12pkg-libmicmgmt-dev-3.8.6-1.glibc2.12.x86_64.rpm
    ```
 3. Install `mpss-miccheck-bin` package:
    ```
@@ -113,11 +112,7 @@ rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-Al
     - **Error Note:** Similar Python syntax error detected. Needs a fix.
 13. Install additional MPSS packages:
     ```
-    rpm -ivh mpss-3.8.6/mpss-micmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-boot-files-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-coi-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-3.8.6/mpss-coi-doc-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-coi-dev-3.8.6-1.glibc2.12.x86_64.rpm
+    rpm -ivh mpss-3.8.6/mpss-micmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-boot-files-3.8.6-1.glibc2.12.x86_64.rpm mpss-coi-3.8.6-1.glibc2.12.x86_64.rpm mpss-3.8.6/mpss-coi-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-coi-dev-3.8.6-1.glibc2.12.x86_64.rpm
     ```
 14. Review compatibility of daemon and licensing packages before installation:
     ```
@@ -130,12 +125,7 @@ rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-Al
     ```
 16. Install remaining MPSS components:
     ```
-    rpm -ivh mpss-mpm-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-mpm-doc-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-myo-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-myo-dev-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-myo-doc-3.8.6-1.glibc2.12.x86_64.rpm \
-            mpss-core-3.8.6-1.glibc2.12.x86_64.rpm
+    rpm -ivh mpss-mpm-3.8.6-1.glibc2.12.x86_64.rpm mpss-mpm-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-dev-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-core-3.8.6-1.glibc2.12.x86_64.rpm
     ```
 **Building the mic.ko Module on AlmaLinux 8.10**  
 
