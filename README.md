@@ -49,7 +49,7 @@ If the module is properly installed and loaded, you should see `mic` listed in t
 
    **Step 4: Installing Required Libraries and Daemon**
 
-Install the required dependencies for running the MPSS daemon:
+To run the MPSS daemon (mpss-daemon), you need to install its required dependencies. Ensure you have MPSS 3.8.6 installed, as it provides the necessary RPM packages. Install the required dependencies for running the MPSS daemon:
 
 ```
 rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif0-3.8.6-1.glibc2.12.x86_64.rpm
