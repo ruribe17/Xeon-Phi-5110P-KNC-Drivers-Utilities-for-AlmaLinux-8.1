@@ -127,6 +127,34 @@ rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-Al
     ```
     rpm -ivh mpss-mpm-3.8.6-1.glibc2.12.x86_64.rpm mpss-mpm-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-dev-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-core-3.8.6-1.glibc2.12.x86_64.rpm
     ```
+
+   **Step 6: Install Network Scripts**
+
+Run the following command to install the necessary network scripts for configuring dynamic IP addresses:
+
+```sudo dnf install network-scripts -y```
+
+This ensures that ifup and ifdown are available for setting the IPs.
+
+   **Step 7: Initialize Default Settings for Xeon Phi**
+
+```micctrl --initdefaults```
+
+Note: If you encounter the following error:
+
+[Error] mic0: Create failed for /etc/ssh/rsa1 keys: Unknown error 255
+
+Proceed to start the MPSS service manually.
+
+   **Step 8: Start and Enable MPSS Service**
+
+```
+systemctl start mpss
+systemctl enable mpss
+```
+
+This starts the Manycore Platform Software Stack (MPSS) and ensures it runs at boot.
+
 **Building the mic.ko Module on AlmaLinux 8.10**  
 
 The Intel Xeon Phi 5110P requires the `mic.ko` kernel module to function properly, but since official support for the Manycore Platform Software Stack (MPSS) has been discontinued, manually building and installing this module is necessary. This guide walks through the process of compiling and installing the `mic.ko` module on AlmaLinux 8.10.  
