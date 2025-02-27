@@ -46,6 +46,19 @@ Para confirmar que el módulo se cargó correctamente, verifica con:
 ```lsmod | grep mic```
 
 Si el módulo está correctamente instalado y cargado, deberías ver `mic` en la salida.
+   **Paso 4: Instalación de Librerías Requeridas y el Daemon**  
+
+Para ejecutar el daemon **MPSS (mpss-daemon)**, es necesario instalar sus dependencias requeridas. Asegúrate de tener **MPSS 3.8.6** instalado, ya que este proporciona los paquetes RPM necesarios. Instalar las dependencias necesarias para ejecutar el daemon MPSS: 
+
+```sh
+rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif0-3.8.6-1.glibc2.12.x86_64.rpm
+rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-dev-3.8.6-1.glibc2.12.x86_64.rpm
+rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-doc-3.8.6-1.glibc2.12.x86_64.rpm
+rpm -ivh mpss-daemon-3.8.6-4.el8.x86_64.rpm
+rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-AlmaLinux-8.1/blob/main/mpss-daemon-3.8.6-4.el8.x86_64.rpm
+```
+
+Con esto, se garantizará que el daemon **MPSS** tenga todas las dependencias necesarias para funcionar correctamente en **MPSS 3.8.6**. 
 
 **Compilación del módulo mic.ko en AlmaLinux 8.10**
 
