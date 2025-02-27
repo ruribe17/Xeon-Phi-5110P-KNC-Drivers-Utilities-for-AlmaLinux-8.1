@@ -61,6 +61,107 @@ rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-Al
 
 Con esto, se garantizará que el daemon **MPSS** tenga todas las dependencias necesarias para funcionar correctamente en **MPSS 3.8.6**. 
 
+### Paso 5: Orden de Instalación de MPSS 3.8.6 RPM  
+
+1. Instalar el paquete **libmicmgmt0**:  
+   ```
+   rpm -ivh glibc2.12pkg-libmicmgmt0-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+2. Instalar los paquetes de desarrollo y documentación de **libmicmgmt**:  
+   ```
+   rpm -ivh glibc2.12pkg-libmicmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm glibc2.12pkg-libmicmgmt-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+3. Instalar el paquete **mpss-miccheck-bin**:  
+   ```
+   rpm -ivh mpss-miccheck-bin-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+4. Crear un enlace simbólico para Python:  
+   ```
+   sudo ln -s /usr/bin/python3 /usr/bin/python
+   ```  
+5. Instalar el paquete **libmicaccesssdk0**:  
+   ```
+   rpm -ivh glibc2.12pkg-libmicaccesssdk0-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+6. Instalar el paquete de desarrollo **libmicaccesssdk-dev**:  
+   ```
+   rpm -ivh glibc2.12pkg-libmicaccesssdk-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+7. Instalar **libodmdebug0** y su paquete de desarrollo:  
+   ```
+   rpm -ivh glibc2.12pkg-libodmdebug0-3.8.6-1.glibc2.12.x86_64.rpm glibc2.12pkg-libodmdebug-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+8. Instalar **libsettings0** y su paquete de desarrollo:  
+   ```
+   rpm -ivh glibc2.12pkg-libsettings0-3.8.6-1.glibc2.12.x86_64.rpm glibc2.12pkg-libsettings-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+9. Instalar **mpss-flash**:  
+   ```
+   rpm -ivh glibc2.12pkg-mpss-flash-3.8.6-1.glibc2.12.x86_64.rpm
+   ```  
+10. Instalar los paquetes relacionados con el kernel:  
+    ```
+    rpm -ivh glibc2.12pkg-mpss-memdiag-kernel-3.8.6-1.glibc2.12.x86_64.rpm glibc2.12pkg-mpss-rasmm-kernel-3.8.6-1.glibc2.12.x86_64.rpm
+    ```  
+11. Instalar **mpss-micmgmt** y su paquete de Python:  
+    ```
+    rpm -ivh mpss-micmgmt-3.8.6-1.glibc2.12.x86_64.rpm mpss-micmgmt-python-3.8.6-1.glibc2.12.x86_64.rpm
+    ```  
+    🔴 **Nota de error**: Se detectó un problema de compatibilidad con Python (`SyntaxError: invalid syntax`). Se recomienda verificar la compatibilidad con Python 2 o modificar el script.  
+12. Instalar **mpss-miccheck**:  
+    ```
+    rpm -ivh mpss-miccheck-3.8.6-1.glibc2.12.x86_64.rpm
+    ```  
+    🔴 **Nota de error**: Se detectó un error similar en la sintaxis de Python. Se requiere una corrección.  
+13. Instalar paquetes adicionales de MPSS:  
+    ```
+    rpm -ivh mpss-3.8.6/mpss-micmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-boot-files-3.8.6-1.glibc2.12.x86_64.rpm mpss-coi-3.8.6-1.glibc2.12.x86_64.rpm mpss-3.8.6/mpss-coi-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-coi-dev-3.8.6-1.glibc2.12.x86_64.rpm
+    ```  
+14. Revisar compatibilidad antes de instalar los paquetes del daemon y la licencia:  
+    ```
+    rpm -ivh mpss-daemon-dev-3.8.6-1.glibc2.12.x86_64.rpm  # Comprobar compatibilidad con mpss-daemon
+    rpm -ivh mpss-license-3.8.6-1.glibc2.12.x86_64.rpm      # Verificar su función
+    ```  
+15. Instalar paquetes para la GUI y headers del módulo:  
+    ```
+    rpm -ivh mpss-micsmc-gui-3.8.6-1.glibc2.12.x86_64.rpm mpss-modules-headers-3.8.6-1.glibc2.12.x86_64.rpm  # Asegurar compatibilidad con módulos modificados
+    ```  
+16. Instalar los componentes restantes de MPSS:  
+    ```
+    rpm -ivh mpss-mpm-3.8.6-1.glibc2.12.x86_64.rpm mpss-mpm-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-dev-3.8.6-1.glibc2.12.x86_64.rpm mpss-myo-doc-3.8.6-1.glibc2.12.x86_64.rpm mpss-core-3.8.6-1.glibc2.12.x86_64.rpm
+    ```  
+
+### Paso 6: Instalación de Scripts de Red  
+
+Ejecutar el siguiente comando para instalar los scripts de red necesarios para configurar direcciones IP dinámicas:  
+```
+sudo dnf install network-scripts -y
+```  
+Esto asegura que los comandos `ifup` y `ifdown` estén disponibles para configurar las direcciones IP.  
+
+---
+
+### Paso 7: Inicializar Configuración por Defecto para Xeon Phi  
+
+```
+micctrl --initdefaults
+```  
+🔴 **Nota**: Si aparece el siguiente error:  
+```
+[Error] mic0: Create failed for /etc/ssh/rsa1 keys: Unknown error 255
+```  
+Proceda a iniciar el servicio MPSS manualmente.  
+
+---
+
+### Paso 8: Iniciar y Habilitar el Servicio MPSS  
+
+```
+systemctl start mpss
+systemctl enable mpss
+```  
+Esto iniciará la pila de software **Manycore Platform Software Stack (MPSS)** y asegurará que se ejecute en cada inicio del sistema.
+
 **Compilación del módulo mic.ko en AlmaLinux 8.10**
 
 El Intel Xeon Phi 5110P requiere el módulo de kernel `mic.ko` para funcionar correctamente, pero dado que el soporte oficial para la Manycore Platform Software Stack (MPSS) ha sido descontinuado, es necesario construir e instalar este módulo manualmente. Esta guía describe el proceso para compilar e instalar el módulo `mic.ko` en AlmaLinux 8.10.
