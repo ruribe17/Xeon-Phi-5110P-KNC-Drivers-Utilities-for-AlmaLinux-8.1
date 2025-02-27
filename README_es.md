@@ -46,6 +46,7 @@ Para confirmar que el módulo se cargó correctamente, verifica con:
 ```lsmod | grep mic```
 
 Si el módulo está correctamente instalado y cargado, deberías ver `mic` en la salida.
+
    **Paso 4: Instalación de Librerías Requeridas y el Daemon**  
 
 Para ejecutar el daemon **MPSS (mpss-daemon)**, es necesario instalar sus dependencias requeridas. Asegúrate de tener **MPSS 3.8.6** instalado, ya que este proporciona los paquetes RPM necesarios. Instalar las dependencias necesarias para ejecutar el daemon MPSS: 
