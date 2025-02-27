@@ -58,7 +58,90 @@ rpm -ivh /mnt/centosroot/root/mpss-3.8.6/libscif-doc-3.8.6-1.glibc2.12.x86_64.rp
 rpm -ivh mpss-daemon-3.8.6-4.el8.x86_64.rpm
 rpm -ivh https://github.com/ruribe17/Xeon-Phi-5110P-KNC-Drivers-Utilities-for-AlmaLinux-8.1/blob/main/mpss-daemon-3.8.6-4.el8.x86_64.rpm
 ```
+**Step 5: MPSS 3.8.6 RPM Installation Order**
 
+1. Install `libmicmgmt0` package:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libmicmgmt0-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+2. Install `libmicmgmt` development and documentation packages:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libmicmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm \
+           /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libmicmgmt-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+3. Install `mpss-miccheck-bin` package:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-miccheck-bin-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+4. Create a symbolic link for Python:
+   ```
+   sudo ln -s /usr/bin/python3 /usr/bin/python
+   ```
+5. Install `libmicaccesssdk0` package:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libmicaccesssdk0-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+6. Install `libmicaccesssdk-dev` package:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libmicaccesssdk-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+7. Install `libodmdebug0` and its development package:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libodmdebug0-3.8.6-1.glibc2.12.x86_64.rpm \
+           /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libodmdebug-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+8. Install `libsettings0` and its development package:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libsettings0-3.8.6-1.glibc2.12.x86_64.rpm \
+           /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-libsettings-dev-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+9. Install `mpss-flash`:
+   ```
+   rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-mpss-flash-3.8.6-1.glibc2.12.x86_64.rpm
+   ```
+10. Install kernel-related packages:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-mpss-memdiag-kernel-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/glibc2.12pkg-mpss-rasmm-kernel-3.8.6-1.glibc2.12.x86_64.rpm
+    ```
+11. Install `mpss-micmgmt` and its Python package:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-micmgmt-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-micmgmt-python-3.8.6-1.glibc2.12.x86_64.rpm
+    ```
+    - **Error Note:** Python compatibility issue detected (`SyntaxError: invalid syntax`). Ensure Python 2 compatibility or modify the script.
+12. Install `mpss-miccheck`:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-miccheck-3.8.6-1.glibc2.12.x86_64.rpm
+    ```
+    - **Error Note:** Similar Python syntax error detected. Needs a fix.
+13. Install additional MPSS packages:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-micmgmt-doc-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-boot-files-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-coi-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-coi-doc-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-coi-dev-3.8.6-1.glibc2.12.x86_64.rpm
+    ```
+14. Review compatibility of daemon and licensing packages before installation:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-daemon-dev-3.8.6-1.glibc2.12.x86_64.rpm  # Check compatibility with mpss-daemon
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-license-3.8.6-1.glibc2.12.x86_64.rpm      # Verify its function
+    ```
+15. Install GUI and module header packages:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-micsmc-gui-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-modules-headers-3.8.6-1.glibc2.12.x86_64.rpm  # Ensure it works with modified modules
+    ```
+16. Install remaining MPSS components:
+    ```
+    rpm -ivh /mnt/centosroot/root/mpss-3.8.6/mpss-mpm-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-mpm-doc-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-myo-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-myo-dev-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-myo-doc-3.8.6-1.glibc2.12.x86_64.rpm \
+            /mnt/centosroot/root/mpss-3.8.6/mpss-core-3.8.6-1.glibc2.12.x86_64.rpm
+    ```
 **Building the mic.ko Module on AlmaLinux 8.10**  
 
 The Intel Xeon Phi 5110P requires the `mic.ko` kernel module to function properly, but since official support for the Manycore Platform Software Stack (MPSS) has been discontinued, manually building and installing this module is necessary. This guide walks through the process of compiling and installing the `mic.ko` module on AlmaLinux 8.10.  
